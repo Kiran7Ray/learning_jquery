@@ -6,9 +6,10 @@
     <title>Document</title>
   </head>
   <body>
-    <p>This is paragraph 1</p>
-    <p>This is paragraph 2</p>
-    <p>This is paragraph 3</p>
+    <h1>This is paragraph 1</h1>
+    <h2>This is paragraph 2</h2>
+    <h3>This is paragraph 3</h3>
+    <p>CLICK IT</p>
   </body>
   <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
   <script>
@@ -23,5 +24,29 @@
     // keyboardevents=keypress,keydown,MediaKeyStatusMap
     //form events=subit,change,focus,blur
     //document/window=load,resize,scroll,unload
+
+    // mouse event
+    // $("h1").click(function () {
+    //   console.log("you clicked");
+    // });
+    // $("h2").dblclick(function () {
+    //   console.log("you double clocked");
+    // });
+    // $("h3").mouseenter(function () {
+    //   console.log("you entered");
+    // });
+    // $("h2").hover(function () {
+    //   console.log("you hoverover ", this);
+    // });
+
+    // on method
+    $("p").on({
+      click: function () {
+        console.log("clicked", this);
+      },
+      mouseleave: function () {
+        console.log("mouse leaved");
+      },
+    });
   </script>
 </html>
