@@ -9,44 +9,22 @@
     <h1>This is paragraph 1</h1>
     <h2>This is paragraph 2</h2>
     <h3>This is paragraph 3</h3>
-    <p>CLICK IT</p>
+    <div id="block">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi voluptas
+      possimus sint in! Omnis, obcaecati atque consequuntur recusandae laborum
+      aspernatur dicta fuga odio aliquam odit nemo ducimus voluptates, pariatur
+      sint nesciunt? Laudantium nostrum laborum, quod saepe veritatis
+      consectetur et provident reiciendis, enim voluptate, ducimus ipsa porro?
+      Modi!
+    </div>
+    <button id="but">click me</button>
   </body>
   <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
   <script>
-    // there are 3 main types of selectors:
-    // 1.element selectors =$('p'),$('body')
-    // 2.id selectors=$('#id')
-    // 3.class selectors=$('.class')
-    // other selectors==$('*').click-->click on all elements
-
-    // events
-    // mouse events=click,dblclick,mouseenter,mouseleave
-    // keyboardevents=keypress,keydown,MediaKeyStatusMap
-    //form events=subit,change,focus,blur
-    //document/window=load,resize,scroll,unload
-
-    // mouse event
-    // $("h1").click(function () {
-    //   console.log("you clicked");
-    // });
-    // $("h2").dblclick(function () {
-    //   console.log("you double clocked");
-    // });
-    // $("h3").mouseenter(function () {
-    //   console.log("you entered");
-    // });
-    // $("h2").hover(function () {
-    //   console.log("you hoverover ", this);
-    // });
-
-    // on method
-    $("p").on({
-      click: function () {
-        console.log("clicked", this);
-      },
-      mouseleave: function () {
-        console.log("mouse leaved");
-      },
+    // $("#block").hide(1000);
+    // $("#block").hide(1000, console.log("content hide"));
+    $("#but").click(function () {
+      $("#block").toggle(1000);
     });
   </script>
 </html>
