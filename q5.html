@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>q3</title>
+    <!-- 5. Illustrate different types of jQuery selectors with appropriate examples.-->
+  </head>
+  <body>
+    <h3>This is paragraph</h3>
+    <p>This is 1 paragraph.</p>
+    <p class="para">This is 2 paragraph.</p>
+    <p id="para">This is 3 paragraph.</p>
+    <a href="#">link</a>
+  </body>
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script>
+    // Element Selector
+    $("p").click(function () {
+      $(this).css("color", "red");
+    });
+    // Class Selector:
+    $(".para").mouseenter(function () {
+      $(this).hide();
+    });
+    // ID Selector:
+    $("#para").click(function () {
+      $(this).css("background", "blue");
+    });
+    // Attribute Selectors
+    $("[href]").click(function () {
+      $(this).css("text-decoration", "none");
+    });
+
+    // Universal Selector
+    $("*").css("font-family", "Arial");
+  </script>
+</html>
