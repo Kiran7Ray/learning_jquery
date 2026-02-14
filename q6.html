@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>q6</title>
+    <!-- 6. Create a form to input Name, Gender, Phone Number, Hobbies, 
+     Appointment Date & Time, Country, Resume, Email, Password, and Confirm Password  with the following validations:
+     All fields are required Appointment date cannot be in the past Resume must be
+      PDF, MS Word, or image file File size must be less than 2 MB Email must be valid Phone number must be valid Password 
+      must be at least 8 characters long and include one lowercase letter, one uppercase letter, one number,
+       and one symbol Password and Confirm Password must match-->
+  </head>
+  <body>
+    <form id="myForm">
+      Name: <input type="text" id="name" /><br /><br />
+
+      Gender:
+      <input type="radio" name="g" />Male
+      <input type="radio" name="g" />Female<br /><br />
+
+      Phone: <input type="text" id="phone" /><br /><br />
+
+      Hobbies:
+      <input type="checkbox" />Music <input type="checkbox" />Sports<br /><br />
+
+      Appointment:
+      <input type="datetime-local" id="date" /><br /><br />
+
+      Country:
+      <select id="country">
+        <option value="">Select</option>
+        <option>Nepal</option>
+        <option>India</option></select
+      ><br /><br />
+
+      Resume:
+      <input type="file" id="resume" /><br /><br />
+
+      Email:
+      <input type="text" id="email" /><br /><br />
+
+      Password:
+      <input type="password" id="pass" /><br /><br />
+
+      Confirm Password:
+      <input type="password" id="cpass" /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script>
+    $("#myForm").submit(function (e) {
+      e.preventDefault();
+
+      if ($("#name").val() == "" || $("#email").val() == "") {
+        alert("All fields required");
+        return;
+      }
+
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test($("#email").val())) {
+        alert("Invalid email");
+        return;
+      }
+
+      var phonePattern = /^[0-9]{10}$/;
+      if (!phonePattern.test($("#phone").val())) {
+        alert("Invalid phone");
+        return;
+      }
+
+      var selected = new Date($("#date").val());
+      if (selected < new Date()) {
+        alert("Date cannot be past");
+        return;
+      }
+
+      var file = $("#resume")[0].files[0];
+      if (file) {
+        var size = file.size / (1024 * 1024);
+        var type = file.type;
+
+        if (size > 2) {
+          alert("File too large");
+          return;
+        }
+
+        if (!type.match("pdf|image|word")) {
+          alert("Invalid file type");
+          return;
+        }
+      }
+
+      var pass = $("#pass").val();
+      var strong = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W]).{8,}$/;
+
+      if (!strong.test(pass)) {
+        alert("Weak password");
+        return;
+      }
+
+      if (pass != $("#cpass").val()) {
+        alert("Passwords not match");
+        return;
+      }
+
+      alert("Form Submitted Successfully");
+    });
+  </script>
+</html>
