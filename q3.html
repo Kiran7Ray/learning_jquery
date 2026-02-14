@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>q3</title>
+    <!-- 3. Demonstrate method chaining in jQuery. -->
+  </head>
+  <body>
+    <div class="menu">WELCOME !!!</div>
+  </body>
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script>
+    $(".menu").click(function () {
+      $(this)
+        .css("color", "white")
+        .css("background", "black")
+        .slideUp(1000)
+        .slideDown(1000);
+    });
+  </script>
+</html>
