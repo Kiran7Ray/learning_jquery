@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>q1</title>
+  </head>
+  <!-- 1. Create an HTML page containing a div with an image and its description in a paragraph. 
+ Write a JavaScript function to change the paragraph text on mouseenter and mouseleave events of the -->
+  <body>
+    <img
+      id="flower"
+      src="picture/flower.jpg"
+      alt="error in loading picture"
+      style="height: 200px; width: 200px"
+    />
+    <h1></h1>
+  </body>
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script>
+    $("#flower").on({
+      mouseenter: function () {
+        $("h1").html("<h1>This is a red flower</h1>");
+      },
+      mouseleave: function () {
+        $("h1").html("<h1>What is this ?</h1>");
+      },
+    });
+  </script>
+</html>
