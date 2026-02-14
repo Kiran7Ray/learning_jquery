@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>q3</title>
+    <!-- 4. Write a sample program to show and hide a specific div using jQuery.-->
+  </head>
+  <body>
+    <button id="btn">HIDE-SHOW</button>
+    <div id="div1">hello !!!</div>
+    <div id="div2">hi !!!</div>
+  </body>
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script>
+    $("#btn").click(function () {
+      $("#div1").hide().$("#div2").show();
+    });
+  </script>
+</html>
