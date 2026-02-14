@@ -1,0 +1,3 @@
+AJAX (Asynchronous JavaScript and XML) is a web development technique used to create faster,
+ more interactive web applications by exchanging data with a server in the background. 
+It allows parts of a web page to update dynamically without requiring a full page reload. 

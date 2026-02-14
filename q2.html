@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>q2</title>
+    <!-- 2. Demonstrate AJAX using jQuery. -->
+  </head>
+  <body>
+    <button id="btn">CLICK ME</button>
+    <br />
+    <div id="block"></div>
+  </body>
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script>
+    $("#btn").click(function () {
+      $.ajax({
+        url: "data.txt",
+        success: function (data) {
+          $("#block").html(data);
+        },
+      });
+    });
+  </script>
+</html>
